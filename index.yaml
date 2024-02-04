@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  app:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-02-04T11:10:07.515999162Z"
+    description: A Helm chart for Kubernetes
+    digest: ed11e19b5088c45350ed595b46693ab8e393cee97ad6f94512e5fe61e7ac299a
+    name: app
+    type: application
+    urls:
+    - https://github.com/maiquanghiep/solid-solid/releases/download/app-0.1.0/app-0.1.0.tgz
+    version: 0.1.0
+generated: "2024-02-04T11:10:07.516005243Z"
