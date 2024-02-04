@@ -5,7 +5,9 @@ on:
     branches:
       - main
     paths:
-      - 'app/**'
+      - 'app/*'
+      # Would be better to list necessary files that need trigger build.
+      #Don't think triggering build when docker-compose.yml has changes is needed
 
 jobs:
   build:
