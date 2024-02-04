@@ -22,7 +22,6 @@ export class ToolsService {
     ip: string,
   ): Promise<LookUpDomainResponse> {
     const domain = lookupDomainDto.domain;
-    console.log(domain);
 
     // Validate the domain input
     if (!this.isValidDomain(domain)) {

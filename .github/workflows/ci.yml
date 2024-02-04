@@ -5,13 +5,16 @@ on:
     branches:
       - main
     paths:
-      - 'app/*'
+      - 'app/**'
       # Would be better to list necessary files that need trigger build.
       #Don't think triggering build when docker-compose.yml has changes is needed
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./app
 
     steps:
       - name: Checkout code
@@ -21,12 +24,18 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 20
-
+      
       - name: Install Yarn
         run: npm install -g yarn
+    
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+      
+      - name: Run test
+        run: yarn test
 
       - name: Lint code
-        run: yarn
+        run: yarn lint
 
       - name: Log in to Docker registry
         uses: docker/login-action@v3
@@ -40,7 +49,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
-          context: .
+          context: ./app
           file: ./app/Dockerfile
           push: true
           build-args: VERSION=${{ github.sha }}
