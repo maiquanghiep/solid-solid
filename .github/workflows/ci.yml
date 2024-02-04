@@ -40,4 +40,4 @@ jobs:
           file: ./Dockerfile
           push: true
           build-args: VERSION=${{ github.sha }}
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/solid:${{ github.sha }}
+          tags: "${{ secrets.DOCKER_USERNAME }}/solid:${{ github.sha }}"
