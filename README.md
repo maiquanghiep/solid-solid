@@ -85,3 +85,4 @@ echo "Secret YAML file 'secret.yaml' generated successfully!"
   ```bash
   kubectl port-forward [pod-name] 3000:3000
   ```
+- Updating the `helm/app/values.yaml` can cause the helm package pipeline to fail as the tag is already created. Ideally, `values.yaml` can be hosted in a different repo as live data for deployment.
