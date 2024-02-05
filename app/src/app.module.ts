@@ -5,6 +5,7 @@ import { HistoryModule } from './history/history.module';
 import { ToolsModule } from './tools/tools.module';
 import { RootModule } from './root/root.module';
 import { HealthModule } from './health/health.module';
+import { MetricsModule } from './metrics/metrics.module';
 import { ConfigModule } from '@nestjs/config';
 
 @Module({
@@ -18,6 +19,7 @@ import { ConfigModule } from '@nestjs/config';
     ToolsModule,
     RootModule,
     HealthModule,
+    MetricsModule,
   ],
 })
 export class AppModule {}
