@@ -81,3 +81,7 @@ echo "Secret YAML file 'secret.yaml' generated successfully!"
 
  ### Devops improvement
  - Continuous deployment (CD) hasn't been considered so the Helm value image.tag need to be updated manually. Simple CD can be added directly to the pipeline to install helm, access to k8s for the runner and, run `helm upgrade --install app . --set image.tag=${{ github.sha }}`. Alternatively, ArgoCD (https://argo-cd.readthedocs.io/en/stable/) with https://argocd-image-updater.readthedocs.io/en/stable/ can be used. 
+- As Ingress isn't considered,`port-forward` is required to test the application for now.
+  ```bash
+  kubectl port-forward [pod-name] 3000:3000
+  ```

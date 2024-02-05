@@ -8,7 +8,7 @@ image:
   repository: maiquanghiep/solid
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "089c59859fb355bb80e8f0a1cd1d22cf220ff003"
+  tag: "21808f7e7a7077c7c1f86e62a325f6508e1ee2b7"
 
 imagePullSecrets: []
 nameOverride: ""
